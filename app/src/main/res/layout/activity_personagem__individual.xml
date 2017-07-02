@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.amandacarvalho.starwars.starwars.Personagem_Individual">
+
+    <include layout="@layout/linha" />
+
+    <Button
+        android:id="@+id/btn_voltar_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/btn_star_wars"
+        android:text="@string/btn_voltar"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="447dp"
+        tools:ignore="MissingConstraints" />
+
+</android.support.constraint.ConstraintLayout>

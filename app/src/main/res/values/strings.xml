@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">StarWars</string>
+    <string name="nome">Nome</string>
+    <string name="lista_de_personagens">Lista de Personagens</string>
+    <string name="nome_linha">Nome</string>
+    <string name="ano_nascimento">Ano Nascimento</string>
+    <string name="planeta_origem">Planeta de Origem</string>
+    <string name="cor_cabelo">Cor do Cabelo</string>
+    <string name="altura_personagem">Altura</string>
+    <string name="filmes_lista">Filmes</string>
+    <string name="btn_voltar">VOLTAR</string>
+</resources>

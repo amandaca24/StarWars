@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo">
+
+    <TextView
+        android:id="@+id/nome_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="@string/nome_linha"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textColor="#fff"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="NewApi" />
+
+    <TextView
+        android:id="@+id/ano_nascimento_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="@string/ano_nascimento"
+        android:textColor="#fff"
+        android:layout_below="@+id/nome_id"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp" />
+
+    <TextView
+        android:id="@+id/planeta_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/planeta_origem"
+        android:textColor="#fff"
+        android:layout_alignBaseline="@+id/ano_nascimento_id"
+        android:layout_alignBottom="@+id/ano_nascimento_id"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp" />
+
+    <TextView
+        android:id="@+id/cabelo_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text="@string/cor_cabelo"
+        android:textColor="#fff"
+        android:layout_below="@+id/ano_nascimento_id"
+        android:layout_alignLeft="@+id/ano_nascimento_id"
+        android:layout_alignStart="@+id/ano_nascimento_id"
+        android:layout_alignRight="@+id/ano_nascimento_id"
+        android:layout_alignEnd="@+id/ano_nascimento_id" />
+
+    <TextView
+        android:id="@+id/altura_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/planeta_id"
+        android:layout_alignStart="@+id/planeta_id"
+        android:layout_alignTop="@+id/cabelo_id"
+        android:text="@string/altura_personagem"
+        android:layout_alignRight="@+id/planeta_id"
+        android:layout_alignEnd="@+id/planeta_id"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/filmes_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filmes_lista"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:layout_below="@+id/altura_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:textColor="#fff"
+        tools:ignore="NewApi" />
+</RelativeLayout>
