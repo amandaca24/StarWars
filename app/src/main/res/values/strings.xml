@@ -9,4 +9,5 @@
     <string name="altura_personagem">Altura</string>
     <string name="filmes_lista">Filmes</string>
     <string name="btn_voltar">VOLTAR</string>
+    <string name="lista_nome">Nome Personagem</string>
 </resources>

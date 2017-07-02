@@ -16,13 +16,13 @@ import retrofit2.Retrofit;
 public interface StarWars {
 
     @GET("/")
-    public void getRootUrls(Call<Root> callback);
+    public void getRootUrls(Call<Root>);
 
     @GET("/people/")
-    Call<SWModelList<Personagens>>) getAllPeople(@Query("page") int page);
+    Call<SWModelList<Personagens>>)getPersonagens(@Query("page") int page);
 
     @GET("/people/{id}/")
-    Call<Personagens>getPeople(@Path("id") int peopleId);
+    Call<Personagens>getPersonagem(@Path("id") int peopleId);
 
 
     @GET("/films/")

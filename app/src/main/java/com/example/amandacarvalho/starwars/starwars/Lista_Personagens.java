@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.amandacarvalho.starwars.R;
+import com.example.amandacarvalho.starwars.control.PersonagensControl;
 import com.example.amandacarvalho.starwars.control.SWControl;
 import com.example.amandacarvalho.starwars.model.Personagens;
 import com.example.amandacarvalho.starwars.model.SWModelList;
@@ -30,15 +31,13 @@ import retrofit2.Retrofit;
 public class Lista_Personagens extends AppCompatActivity {
 
     ProgressDialog dialog;
-    private Toolbar toolbar;
     private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_personagens);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
         final ListView lista = (ListView) findViewById(R.id.lista_personagens_id);
 
         StarWars lista_personagens =  StarWars.retrofit.create(StarWars.class);
@@ -48,16 +47,16 @@ public class Lista_Personagens extends AppCompatActivity {
         dialog.setCancelable(false);
         dialog.show();
 
-        final Call<SWModelList<Personagens>> call = StarWars.getPeople();
+        final Call<SWModelList<Personagens>> call = StarWars.getPersonagens();
         call.enqueue(new Callback<SWModelList<Personagens>>() {
             @Override
             public void onResponse(Call<SWModelList<Personagens>> call, Response<SWModelList<Personagens>> response) {
                 if (dialog.isShowing())
                     dialog.dismiss();
 
-                final SWModelList<Personagens> lista_personagens = response.body();
+        final SWModelList<Personagens> lista_personagens = response.body();
                 if(lista_personagens != null){
-                    SWControl adapter = new SWControl(getBaseContext(), lista_personagens);
+                    PersonagensControl adapter = new PersonagensControl(getBaseContext(), lista_personagens);
                     lista.setAdapter(adapter);
                     lista.setOnClickListener(new AdapterView.OnItemClickListener());
                     Intent intent = new Intent(Lista_Personagens.this, Personagem_Individual.class);
@@ -67,11 +66,11 @@ public class Lista_Personagens extends AppCompatActivity {
 
             }
 
-            @Override
-            public void onFailure(Call<SWModelList<Personagens>> call, Throwable t) {
-                    if (dialog.isShowing())
-                        dialog.dismiss();
-                    Toast.makeText(getBaseContext(), "Problema de acesso", Toast.LENGTH_LONG).show();
+    @Override
+    public void onFailure(Call<SWModelList<Personagens>> call, Throwable t) {
+                if (dialog.isShowing())
+                    dialog.dismiss();
+                Toast.makeText(getBaseContext(), "Problema de acesso", Toast.LENGTH_LONG).show();
 
             }
         }

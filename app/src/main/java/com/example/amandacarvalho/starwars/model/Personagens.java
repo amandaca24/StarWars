@@ -166,4 +166,5 @@ public class Personagens implements Serializable {
     public void setVehiclesUrls(ArrayList<String> vehiclesUrls) {
         this.vehiclesUrls = vehiclesUrls;
     }
+
 }

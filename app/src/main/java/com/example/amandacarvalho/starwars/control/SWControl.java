@@ -52,4 +52,6 @@ public class SWControl extends ArrayAdapter<Personagens>{
     }
 
 
+
+
 }
