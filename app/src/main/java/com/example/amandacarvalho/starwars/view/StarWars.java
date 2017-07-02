@@ -2,6 +2,7 @@ package com.example.amandacarvalho.starwars.view;
 
 import com.example.amandacarvalho.starwars.model.*;
 import retrofit2.Call;
+import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -57,4 +58,8 @@ public interface StarWars {
     Call<Planeta> getPlanet(@Path("id") int planetId);
 
 
+    public static final Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("http://swapi.co/api")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 }

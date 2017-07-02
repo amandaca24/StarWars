@@ -22,8 +22,8 @@ public class PersonagensControl extends ArrayAdapter<Personagens>{
     private final List<Personagens> pessoas;
 
 
-    public Personagens_List (Context context, List<Personagens> elementos){
-        super(context, R.layout.content_main, elementos);
+    public PersonagensControl (Context context, List<Personagens> pessoas){
+        super(context, R.layout.content_main, pessoas);
         this.context = context;
         this.pessoas = pessoas;
     }
@@ -44,4 +44,4 @@ public class PersonagensControl extends ArrayAdapter<Personagens>{
     }
 
 }
-}
+

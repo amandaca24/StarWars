@@ -52,6 +52,30 @@ public class SWControl extends ArrayAdapter<Personagens>{
     }
 
 
+    public static String filmUrlToFilmTitle(String filmUrl) {
+        int filmId;
+        try {
+            filmId = filmUrl.charAt(filmUrl.length()-2);
+        } catch (Exception e) {
+            return null;
+        }
+        switch (filmId) {
+            case 1:
+                return "Star Wars Episode IV A New Hope";
+            case 2:
+                return "Star Wars Episode V The Empire Strikes Back";
+            case 3:
+                return "Star Wars Episode VI Return of the Jedi";
+            case 4:
+                return "Star Wars Episode I The Phantom Menace";
+            case 5:
+                return "Star Wars Episode II Attack of the Clones";
+            case 6:
+                return "Star Wars Episode III Revenge of the Sith";
+            default:
+                return null;
+        }
+    }
 
 
 }

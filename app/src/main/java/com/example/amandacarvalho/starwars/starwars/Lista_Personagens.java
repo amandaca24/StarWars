@@ -38,6 +38,7 @@ public class Lista_Personagens extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_personagens);
 
+
         final ListView lista = (ListView) findViewById(R.id.lista_personagens_id);
 
         StarWars lista_personagens =  StarWars.retrofit.create(StarWars.class);
@@ -51,8 +52,8 @@ public class Lista_Personagens extends AppCompatActivity {
         call.enqueue(new Callback<SWModelList<Personagens>>() {
             @Override
             public void onResponse(Call<SWModelList<Personagens>> call, Response<SWModelList<Personagens>> response) {
-                if (dialog.isShowing())
-                    dialog.dismiss();
+                if (dialog.isShowing()){
+                    dialog.dismiss();}
 
         final SWModelList<Personagens> lista_personagens = response.body();
                 if(lista_personagens != null){
@@ -66,9 +67,9 @@ public class Lista_Personagens extends AppCompatActivity {
 
             }
 
-    @Override
-    public void onFailure(Call<SWModelList<Personagens>> call, Throwable t) {
-                if (dialog.isShowing())
+        @Override
+            public void onFailure(Call<SWModelList<Personagens>> call, Throwable e) {
+                if (dialog.isShowing()){
                     dialog.dismiss();
                 Toast.makeText(getBaseContext(), "Problema de acesso", Toast.LENGTH_LONG).show();
 
@@ -76,11 +77,14 @@ public class Lista_Personagens extends AppCompatActivity {
         }
 
         }
-        );
-
 
         });
 
-
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        //Init star wars api
+        SWapi.init();
+    }
 
 }

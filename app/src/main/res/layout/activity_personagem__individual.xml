@@ -7,8 +7,8 @@
     tools:context="com.example.amandacarvalho.starwars.starwars.Personagem_Individual">
 
 
-
     <ListView
+        android:id="@+id/lista_pessoas_id"
         android:layout_width="0dp"
         android:layout_height="0dp"
         tools:layout_editor_absoluteX="8dp"

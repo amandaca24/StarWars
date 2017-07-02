@@ -31,7 +31,9 @@ public class Personagem_Individual extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personagem__individual);
 
-        StarWars lista_personagens =  StarWars.retrofit.create(StarWars.class);
+        final ListView lista_pessoa = (ListView) findViewById(R.id.lista_pessoas_id);
+
+        StarWars lista_personagem =  StarWars.retrofit.create(StarWars.class);
 
         dialog = new ProgressDialog(Personagem_Individual.this);
         dialog.setMessage("Carregando...");
@@ -49,7 +51,7 @@ public class Personagem_Individual extends AppCompatActivity {
         final SWModelList<Personagens> lista_personagens = response.body();
              if(lista_personagens != null){
                 SWControl adapter = new SWControl(getBaseContext(), lista_personagens);
-                lista.setAdapter(adapter);
+                lista_pessoa.setAdapter(adapter);
 
                }
 
